@@ -1,7 +1,7 @@
 public class SnakeAndLadder {
     final static int source =0;
 	final static int destination =100;
-//UC4-player repeat dice throw until reaches 100th position
+//UC5- ensuring exact winning position of 100th position
 	public static void main(String[] args) {
 		System.out.println("Welcome to Snake and Ladder Game");
 		int position =0;
@@ -26,11 +26,16 @@ public class SnakeAndLadder {
 					break;
 		}
 			if (position == 100) {
-				System.out.println("You won the game."); 
+				break;   
+			} else if (position > 100) {
+                position -= randomCheck;
+                System.out.println("Invalid Dice Face. You are staying on same position.");
             } else if (position < 0) {
                 position = source;
                 System.out.println("You came back to start.");
             } else {
                 System.out.println("New Position: " + position);
-            }}
+            }
+			System.out.println("You won the game."); 
+			}
 	}}
